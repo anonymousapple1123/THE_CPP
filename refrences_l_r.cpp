@@ -1,4 +1,4 @@
-// Arefrence is an alias for an object, is usually implemented
+// A refrence is an alias for an object, is usually implemented
 // to hold a machine address of an object
 
 template<class T>
