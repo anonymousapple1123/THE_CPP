@@ -1,0 +1,181 @@
+STL  Algorithms
+
+
+HEAP - tree like structure where the parent node is always greater than leaf/child nodes
+
+1. Std::make_heap(begin(numbers), end(numbers));
+	-> takes an array of elements and creates a heap array of them in list format instead of a linked list structure.
+
+2. Std::push_heap(begin(numbers), end(numbers));
+	-> adds number in the array and maintains the heap format.
+
+3.Std::pop_heap(begin(numbers), end(numbers));
+	-> removes the first element(largest) with last and place it at the back of the array and heaping it.
+__________________________________________________________________________________________________________________
+
+SORTING
+-> sort, partial sort, nth element, sort heap , inplace merge
+
+PARTITIONING
+-> puts same type together
+
+OTHER PERMUTATIONS
+-> rotate , shuffle, next_permutation, prev_permutation, reverse
+__________________________________________________________________________________________________________________
+
+AUXILARIES
+	-> uses to make complex algorithm on existing algorithms
+
+stable_*.  —> stable_sort
+			   stable_partition
+
+is_* —> is_sorted
+		is_partitioned
+		is_heap
+
+is_*_until —> is_sorted_until
+			 is_partitioned_until
+			is_heap_until
+
+__________________________________________________________________________________________________________________
+
+NUMERIC ALGORITHMS
+
+Count -> counts the frequency of the elelment
+
+Accumulate/ (transform_)reduce -> makes the sum of the elements
+
+partial_sum/ (transform_)inclusive_scan/ (transform_)exclusive_scan -> sums from start to current position
+
+Inner_product -> multiplication of the counter part of the elements like in key pair
+
+Adjacent_difference -> makes the difference between every two neighbor.
+
+Sample -> takes out n random samples from a colelction
+
+__________________________________________________________________________________________________________________
+
+QUERYING A PROPERTY
+
+all_of -> if pred(x) of all the value return true then its true.
+any_of -> if pred(x) of any one of the value is tru then  its true
+none_of -> if pred(x) of are none to exist then return true.
+
+__________________________________________________________________________________________________________________
+
+QUERYING PROPERTY ON 2 RANGES
+
+Equal -> true if  size is same of both arrays
+
+lexicographical_compare -> returns true if the one is found first in a dictionary than other.
+
+Mismatch -> find the position where the start to differ.
+__________________________________________________________________________________________________________________
+
+SEARCHING VALUE
+
+NOT SORTED
+Find -> return index of first occurrence.
+adjacent_find -> return the first occurrence where two searched elements are found together.
+
+SORTED
+equal_range -> search a sorted collection.
+lower_bound -> start of the first index of searched elements
+upper_bound -> return the last index the searched element
+binary_search -> true or false of the occurrence of searched elements.
+
+__________________________________________________________________________________________________________________
+
+SEARCHING A RANGE
+
+Search -> search an sub array in an array from start
+
+Find_end -> search sub array from the end
+__________________________________________________________________________________________________________________
+
+SEARCHING RELATIVE VALUE
+
+max_element -> return iterator to maximum element
+min_element -> returns iterator to minimum element
+minmax_elements -> return a pair of pointer of max and min elements
+
+__________________________________________________________________________________________________________________
+
+ALGOS ON SETS
+
+Set -> sorted collection any
+
+Std::set_difference( begin(A), end(A);
+					begin(B), end(B),
+					std::back_inserter(result));
+
+Std::set_intersection -> as name suggest the common part only
+Std::set_union -> all of both sets
+Std::set_symmetric_difference -> common part removed
+Std::include -> is set A is subset of B
+Std::merge -> merge 2 sorted in 1
+
+__________________________________________________________________________________________________________________
+
+MOVERS
+
+Std::copy(first, last, out); -> copy from first to last in ‘out’ collection.
+Std::move(first, last, out); -> moves the elements from one to another array
+Std::swap_ranges(first, last, out) ->swaps of same size arrays.
+Std::copy_backward -> copy from the back to front
+Std::move_backward -> as intended
+
+__________________________________________________________________________________________________________________
+
+VALUE MODIFIRES
+
+Std::fill(first, last, 42); 	——> fills all the values with the number in collection
+Std::generate(first, last, foo); 	——>call function of all the elements’ values
+Std::iota(first, last, 42). ——>straits from the 42 and increments the next value for next positions
+Std::replace(first, last, 42 , 66)  ——> replaces all the occurrences of 42 by 66
+__________________________________________________________________________________________________________________
+
+STRUCTURE CHANGERS
+
+Std::remove(begin(collection), end(collection) , 99); -> remove all the occurrences of the number in ends and return the iteration
+at the first element from which erasing should start.
+
+Collection.erase(Std::remove(begin(collection), end(collection) , 99)).
+
+Std::unique(begin(collection), end(collection)) -> removes all the duplicates occurs together. Then uses erase to redoes the useless
+values pushed at end.
+
+*_COPY used to perform the operation on another collection
+ Like -> remove_copy, unique_copy etc
+
+*_IF
+
+find_if, remove_if, replace_if etc
+__________________________________________________________________________________________________________________
+
+TRANSFORM
+
+Std::transform(begin(collection), end(collection), std::back_inserter(results), foo) ; -> applies function to the elements of the collection
+ *IT CAN OVERLOADED WITH TWO COLLECTIONS*
+
+Std::for_each(begin(collection), end(collection), foo) -> applies foo to every elements and doest care what f returns even if its void.
+
+__________________________________________________________________________________________________________________
+
+RAW MEMEORY
+
+uninitialized_Fill	-> fill values to the uninitialized memory
+uninitialized_Copy
+uninitialized_move
+
+Uninitialized_default_construct
+Uninitialized_value_construct
+__________________________________________________________________________________________________________________
+
+_N
+
+copy_n
+fill_n
+search_n
+for_each_n
+Etc
